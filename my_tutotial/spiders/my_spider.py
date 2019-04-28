@@ -17,11 +17,8 @@ class MySpader(scrapy.Spider):
             author = quote.css('small.author::text').extract()
             tag = quote.css('.tag::text').extract()
 
-            q_items = [title, author, tag]
-            items = q_items
+            items['title'] = title
+            items['author'] = author
+            items['tag'] = tag
 
-            yield {
-                'title': title,
-                'author': author,
-                'tag': tag
-            }
+            yield items

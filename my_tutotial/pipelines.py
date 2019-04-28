@@ -8,4 +8,5 @@
 
 class MyTutotialPipeline(object):
     def process_item(self, item, spider):
+        print('Here is PIPELINE :', item)
         return item
